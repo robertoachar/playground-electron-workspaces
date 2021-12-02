@@ -1,0 +1,10 @@
+{
+  "name": "@playground/sum",
+  "version": "1.0.0",
+  "description": "Sum",
+  "author": "Roberto Achar <robertoachar@gmail.com>",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {},
+  "devDependencies": {}
+}

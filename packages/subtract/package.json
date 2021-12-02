@@ -1,0 +1,10 @@
+{
+  "name": "@playground/subtract",
+  "version": "1.0.0",
+  "description": "Subtract",
+  "author": "Roberto Achar <robertoachar@gmail.com>",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {},
+  "devDependencies": {}
+}

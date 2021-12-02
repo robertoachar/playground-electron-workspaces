@@ -1,0 +1,16 @@
+{
+  "name": "@playground/calc",
+  "version": "1.0.0",
+  "description": "Calc",
+  "author": "Roberto Achar <robertoachar@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@playground/subtract": "1.0.0",
+    "@playground/sum": "1.0.0",
+    "esm": "3.2.25"
+  },
+  "devDependencies": {}
+}
