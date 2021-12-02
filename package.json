@@ -6,7 +6,7 @@
   "private": true,
   "homepage": "https://github.com/robertoachar/playground-electron-workspaces#readme",
   "scripts": {
-    "start": "node main.js",
+    "start:calc": "yarn workspace @playground/calc start",
     "lint": "jest --config jest-eslint.config.js",
     "lint:watch": "jest --config jest-eslint.config.js --watch",
     "jest": "jest --config jest-test.config.js",
@@ -18,7 +18,7 @@
   },
   "ntl": {
     "descriptions": {
-      "start": "Start development mode",
+      "start:calc": "Start Calc Application",
       "lint": "Run lint",
       "lint:watch": "Start lint in watch mode",
       "jest": "Run tests",

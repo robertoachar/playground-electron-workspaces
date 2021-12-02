@@ -1,8 +1,28 @@
-import { sum } from '@playground/sum';
-import { subtract } from '@playground/subtract';
+import path from 'path';
+import { app, BrowserWindow } from 'electron';
 
-const totalSum = sum(5, 5);
-console.log(totalSum);
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 1280,
+    height: 768,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
 
-const totalSubtract = subtract(5, 5);
-console.log(totalSubtract);
+  win.loadFile(path.join(__dirname, 'index.html'));
+};
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
