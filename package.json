@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "A playground for Electron with Yarn Workspaces.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
+  "private": true,
   "homepage": "https://github.com/robertoachar/playground-electron-workspaces#readme",
-  "keywords": [
-    "node"
-  ],
-  "main": "main.js",
-  "files": [
-    "src"
-  ],
   "scripts": {
     "start": "node main.js",
     "lint": "jest --config jest-eslint.config.js",
@@ -42,9 +36,6 @@
   "bugs": {
     "url": "https://github.com/robertoachar/playground-electron-workspaces/issues"
   },
-  "dependencies": {
-    "esm": "3.2.25"
-  },
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@babel/eslint-parser": "7.16.3",
@@ -60,6 +51,14 @@
     "jest-runner-eslint": "1.0.0",
     "jest-watch-typeahead": "1.0.0",
     "prettier": "2.5.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/**"
+    ]
   },
   "license": "MIT"
 }
