@@ -1,5 +1,7 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    name: 'playground',
+  },
   plugins: [
     [
       '@electron-forge/plugin-webpack',
