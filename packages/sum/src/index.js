@@ -1,1 +1,1 @@
-module.exports.sum = (x, y) => x + y;
+export const sum = (x, y) => x + y;
