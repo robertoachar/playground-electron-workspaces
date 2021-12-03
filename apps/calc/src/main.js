@@ -1,18 +1,25 @@
 /* eslint import/no-extraneous-dependencies: off */
 
-import path from 'path';
 import { app, BrowserWindow } from 'electron';
+import startup from 'electron-squirrel-startup';
+import { environment } from './environment';
+
+console.log('hello from main');
+
+if (startup) {
+  app.quit();
+}
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 1280,
     height: 768,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: environment.MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
 
-  win.loadFile(path.join(__dirname, 'index.html'));
+  win.loadURL(environment.MAIN_WINDOW_WEBPACK_ENTRY);
 };
 
 app.whenReady().then(() => {
@@ -26,5 +33,7 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit();
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });

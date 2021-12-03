@@ -4,16 +4,27 @@
   "description": "Calc",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "private": true,
-  "main": "main.js",
+  "main": ".webpack/main",
+  "config": {
+    "forge": "./forge.config.js"
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
     "@playground/subtract": "1.0.0",
     "@playground/sum": "1.0.0",
-    "esm": "3.2.25"
+    "electron-squirrel-startup": "1.0.0"
   },
   "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.61",
+    "@electron-forge/maker-deb": "6.0.0-beta.61",
+    "@electron-forge/maker-dmg": "6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.61",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.61",
+    "@vercel/webpack-asset-relocator-loader": "1.7.0",
     "electron": "16.0.3"
   }
 }
